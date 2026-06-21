@@ -1,36 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SeaGuard Lomé</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>SeaGuard Lomé</h1>
+      <p>
+        Système de simulation des risques de submersion marine et d'inondation
+        côtière.
+      </p>
+    </header>
 
-    <h1>🌊 SeaGuard Lomé</h1>
+    <h1> SeaGuard Lomé</h1>
 
     <div class="container">
+      <label>Hauteur des vagues (m)</label>
+      <input type="number" id="vagues" />
 
-        <label>Hauteur des vagues (m)</label>
-        <input type="number" id="vagues">
+      <label>Niveau de marée (m)</label>
+      <input type="number" id="maree" />
 
-        <label>Niveau de marée (m)</label>
-        <input type="number" id="maree">
+      <label>Vitesse du vent (km/h)</label>
+      <input type="number" id="vent" />
 
-        <label>Vitesse du vent (km/h)</label>
-        <input type="number" id="vent">
+      <button id="btn">Calculer le risque</button>
 
-        <button id="btn">
-            Calculer le risque
-        </button>
-
-        <div id="resultat"></div>
-
+      <div id="resultat"></div>
     </div>
+    <div class="info">
+      <h3>À propos</h3>
+      <p>
+        Cette application simule les risques liés à la montée des eaux et aux
+        conditions météorologiques sur le littoral togolais.
+      </p>
+    </div>
+    <footer>
+    <p>
+        © 2026 SeaGuard Lomé | Projet réalisé par Ridwan Abdoul
+    </p>
+</footer>
 
     <script src="script.js"></script>
-
-</body>
+  </body>
 </html>

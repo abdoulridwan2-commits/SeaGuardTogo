@@ -1,25 +1,31 @@
-const btn = document.getElementById("btn");
-const resultat = document.getElementById("resultat");
+let message = "";
 
-btn.addEventListener("click", () => {
+if (indice < 3) {
+    message = `
+        <h2>🟢 Risque Faible</h2>
+        <p>Aucun danger immédiat détecté.</p>
+    `;
+}
+else if (indice < 5) {
+    message = `
+        <h2>🟡 Risque Moyen</h2>
+        <p>Surveillance recommandée.</p>
+    `;
+}
+else if (indice < 7) {
+    message = `
+        <h2>🟠 Risque Élevé</h2>
+        <p>Des inondations côtières sont possibles.</p>
+    `;
+}
+else {
+    message = `
+        <h2>🔴 Danger Critique</h2>
+        <p>Risque important de dégâts sur le littoral.</p>
+    `;
+}
 
-    const vagues = Number(document.getElementById("vagues").value);
-    const maree = Number(document.getElementById("maree").value);
-    const vent = Number(document.getElementById("vent").value);
-
-    const indice = vagues + maree + (vent / 20);
-
-    if (indice < 3) {
-        resultat.innerHTML = "🟢 Risque Faible";
-    }
-    else if (indice < 5) {
-        resultat.innerHTML = "🟡 Risque Moyen";
-    }
-    else if (indice < 7) {
-        resultat.innerHTML = "🟠 Risque Élevé";
-    }
-    else {
-        resultat.innerHTML = "🔴 Danger Critique";
-    }
-
-});
+resultat.innerHTML = `
+    ${message}
+    <p><strong>Indice :</strong> ${indice.toFixed(1)}</p>
+`;
